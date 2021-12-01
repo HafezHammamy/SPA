@@ -5,9 +5,9 @@ import Pagination from "../UI/pagination";
 import classes from "./main.module.css";
 
 const Main = () => {
-  const { isLoading, tickets } = useContext(TicketContext);
+  const { isLoading, tickets, Error } = useContext(TicketContext);
 
-  let content = "<p>No Tickets Found";
+  let content = "No Tickets Found";
 
   if (tickets.length > 0) {
     content = <Tickets />;
