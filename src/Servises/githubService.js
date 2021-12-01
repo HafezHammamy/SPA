@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const getTickets = async (pageNumber, pageSize) => {
-  console.log(pageNumber, pageSize);
   const { data } = await axios.get(
     `https://api.github.com/repos/remix-run/remix/issues?page=${pageNumber}&per_page=${pageSize}`
   );
+  console.log(data);
   return data;
 };
 

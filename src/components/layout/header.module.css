@@ -24,3 +24,17 @@
 .header .nav a {
   margin-left: 10px;
 }
+
+.header .nav .badge {
+  display: inline-block;
+  background-color: aliceblue;
+  color: rgb(64, 11, 126);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 3px 0px 0 10px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px;
+}

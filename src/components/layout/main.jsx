@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Loader from "react-loader-spinner";
 import TicketContext from "../../store/ticket-context";
 import Tickets from "../Ticket/tickets";
 import Pagination from "../UI/pagination";
@@ -14,13 +15,20 @@ const Main = () => {
   }
 
   if (ctx.isLoading) {
-    content = "loading ...";
+    content = (
+      <Loader
+        type="Oval"
+        color="#00BFFF"
+        height={50}
+        width={50}
+        timeout={3000} //3 secs
+      />
+    );
   }
-  console.log(ctx);
   return (
     <main className={classes.main}>
-      {content}
-      {!ctx.isLoading && <Pagination count={ctx.count} />}
+      <div className={classes.content}>{content}</div>
+      {<Pagination count={ctx.count} />}
     </main>
   );
 };

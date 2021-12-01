@@ -6,6 +6,7 @@ const TicketContext = React.createContext({
   currentPage: 1,
   pageSize: 3,
   setCurrentPage: (pageNumber) => {},
+  isLoading: false,
 });
 
 export default TicketContext;

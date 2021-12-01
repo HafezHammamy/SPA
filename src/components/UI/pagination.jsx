@@ -9,8 +9,10 @@ const Pagination = (props) => {
     ticketsCtx.setCurrentPage(PageNumber);
   };
 
+  const pageCount = Math.ceil(ticketsCtx.count / ticketsCtx.pageSize);
+
   let paginationHTML = [];
-  for (let i = 1; i <= props.count; i++) {
+  for (let i = 1; i <= pageCount; i++) {
     paginationHTML.push(
       <li
         onClick={moveToPageHandler.bind(null, i)}
