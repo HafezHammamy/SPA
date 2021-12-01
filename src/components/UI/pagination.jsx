@@ -5,14 +5,12 @@ import classes from "./pagination.module.css";
 const Pagination = (props) => {
   const ticketsCtx = useContext(TicketContext);
 
-  const pagesCount = Math.ceil(ticketsCtx.tickets.length / ticketsCtx.pageSize);
-
   const moveToPageHandler = (PageNumber) => {
     ticketsCtx.setCurrentPage(PageNumber);
   };
 
   let paginationHTML = [];
-  for (let i = 1; i <= pagesCount; i++) {
+  for (let i = 1; i <= props.count; i++) {
     paginationHTML.push(
       <li
         onClick={moveToPageHandler.bind(null, i)}

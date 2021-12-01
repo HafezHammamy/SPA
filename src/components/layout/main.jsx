@@ -5,22 +5,22 @@ import Pagination from "../UI/pagination";
 import classes from "./main.module.css";
 
 const Main = () => {
-  const { isLoading, tickets, Error } = useContext(TicketContext);
+  const ctx = useContext(TicketContext);
 
   let content = "No Tickets Found";
 
-  if (tickets.length > 0) {
+  if (ctx.tickets.length > 0) {
     content = <Tickets />;
   }
 
-  if (isLoading) {
+  if (ctx.isLoading) {
     content = "loading ...";
   }
-
+  console.log(ctx);
   return (
     <main className={classes.main}>
       {content}
-      {!isLoading && <Pagination />}
+      {!ctx.isLoading && <Pagination count={ctx.count} />}
     </main>
   );
 };
