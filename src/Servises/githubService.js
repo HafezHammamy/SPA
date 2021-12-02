@@ -1,17 +1,16 @@
-import axios from "axios";
+import http from "./httpService";
 
+const endPoint = "/remix-run/remix/issues";
 const getTickets = async (pageNumber, pageSize) => {
-  const { data } = await axios.get(
-    `https://api.github.com/repos/remix-run/remix/issues?page=${pageNumber}&per_page=${pageSize}`
+  const response = await http.get(
+    `${endPoint}?page=${pageNumber}&per_page=${pageSize}`
   );
-  console.log(data);
-  return data;
+  console.log(response);
+  return response.data;
 };
 
 const getTicketsCount = async () => {
-  const { data } = await axios.get(
-    `https://api.github.com/repos/remix-run/remix/issues`
-  );
+  const { data } = await http.get(endPoint);
   return data.length;
 };
 export default getTickets;
