@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useReducer, useState } from "react";
 import getTickets, { getTicketsCount } from "../Servises/githubService";
 import TicketContext from "./ticket-context";
 
